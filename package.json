@@ -1,0 +1,34 @@
+{
+  "name": "cordova-plugin-payments-alipay",
+  "version": "1.0.0",
+  "description": "Alipay for cordova app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yu Chen",
+  "license": "ISC",
+  "cordova": {
+    "id": "cordova-plugin-payments-alipay",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yccp/cordova-plugin-payments-alipay.git"
+  },
+  "keywords": [
+    "cordova",
+    "alipay",
+    "feedback",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "bugs": {
+    "url": "https://github.com/yccp/cordova-plugin-payments-alipay/issues"
+  },
+  "homepage": "https://github.com/yccp/cordova-plugin-payments-alipay#readme"
+}
