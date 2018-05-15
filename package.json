@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-payments-alipay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Alipay for cordova app",
   "main": "index.js",
   "scripts": {

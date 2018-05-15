@@ -1,7 +1,7 @@
-# 阿里云移动用户反馈 cordova 插件
+# 支付宝支付 cordova 插件
 
 > 支持ios, android
-开通服务: [https://www.aliyun.com/product/feedback](https://www.aliyun.com/product/feedback)
+开通服务: [https://open.alipay.com](https://open.alipay.com)
 
 ## 安装
 
@@ -26,11 +26,10 @@ ionic cordova plugin add cordova-plugin-cocoapod-support
 ## 使用方法
 >打开支付页面
 ```js
-window.Alipay.pay({
-  // ...
-}, function() {
-  console.log('成功');
-}, function(e) {
+const orderstring = 'xxx'; // 后台生成的字符串
+window.Alipay.pay(orderstring, res => {
+    console.log('成功');
+}, e => {
   console.error(e);
 });
 
