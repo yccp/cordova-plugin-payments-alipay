@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin 
-  xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-payments-alipay" version="1.0.1">
+  xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-payments-alipay" version="1.0.3">
   <name>Alipay</name>
   <description>Cordova Plugin for Alipay</description>
   <license>ISC</license>
@@ -45,7 +45,6 @@
       <uses-permission android:name="android.permission.READ_PHONE_STATE" />
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     </config-file>
-    <framework src="com.android.support:support-v4:+" value="gradle" />
     <framework src="src/android/Alipay.gradle" custom="true" type="gradleReference" />
     <resource-file src="src/android/libs/alipaySdk-20180403.jar" target="libs/alipaySdk-20180403.jar" />
     <source-file src="src/android/Alipay.java" target-dir="src/news/chen/yu/ionic" />

@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.alipay.sdk.app.PayTask;
+import com.alipay.sdk.app.AuthTask;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -46,10 +47,43 @@ public class Alipay extends CordovaPlugin {
                 return true;
             }
             doCallPayment(callbackContext, payParameters);
-        }else{
+        } else if (action.equals("auth")) {
+            String str = args.getString(0);
+            doCallAuth(callbackContext, str);
+        } else {
             callbackContext.error("Known service: " + action);
         }
         return true;
+    }
+
+    private void doCallAuth(final CallbackContext callbackContext, final String parameters) {
+        cordova.getThreadPool().execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Log.d(TAG, "Calling Alipay with: " + parameters);
+                    AuthTask task = new AuthTask(cordova.getActivity());
+                    // 调用支付接口，获取支付结果
+                    final Map<String, String> rawResult = task.authV2(parameters, true);
+                    Log.d(TAG, "Alipay returns:" + rawResult.toString());
+                    final JSONObject result = buildPaymentResult(rawResult);
+                    cordova.getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(rawResult.get("resultStatus").equals("9000"))
+                                callbackContext.success(result);
+                            else
+                                callbackContext.error(result);
+                        }
+                    });
+                }
+                catch (JSONException e){
+                    Log.e(TAG, "Manipulating json", e);
+                    callbackContext.error("Manipulating json");
+                }
+            }
+
+        });
     }
 
     private void doCallPayment(final CallbackContext callbackContext, final String parameters) {
