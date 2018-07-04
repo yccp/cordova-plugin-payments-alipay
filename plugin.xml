@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin 
-  xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-payments-alipay" version="1.0.1">
+  xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-payments-alipay" version="1.0.3">
   <name>Alipay</name>
   <description>Cordova Plugin for Alipay</description>
   <license>ISC</license>
