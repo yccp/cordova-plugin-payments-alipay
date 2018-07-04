@@ -13,4 +13,13 @@ module.exports = {
   pay: function (order, successCallback, errorCallback) {
     cordova.exec(successCallback, errorCallback, "Alipay", "pay", [order]);
   },
+
+  /**
+   * @param {object|string} str
+   * @param {Function} successCallback ['success']
+   * @param {Function} errorCallback ['fail'|'cancel'|'invalid']
+   */
+  auth: function (str, successCallback, errorCallback) {
+    cordova.exec(successCallback, errorCallback, "Alipay", "auth", [str]);
+  },
 };

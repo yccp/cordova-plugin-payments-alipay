@@ -34,6 +34,16 @@ window.Alipay.pay(orderstring, res => {
 });
 
 ```
+>打开授权页面
+```js
+const authstring = 'xxx'; // 后台生成的字符串
+window.Alipay.auth(authstring, res => {
+    console.log('成功');
+}, e => {
+  console.error(e);
+});
+
+```
 
 ## IONIC Wrap
 [https://github.com/yc-ionic/alipay](https://github.com/yc-ionic/alipay)
